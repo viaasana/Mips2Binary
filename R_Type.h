@@ -5,6 +5,7 @@ class R_Type : public Instruction
 {
 	string opcode, shamt, funct;
 	Register rs, rt, rd;
+	bool isShamt;
 public:
 	R_Type();
 	void input(string);

@@ -1,3 +1,3 @@
 lable:
-add $t1, $t0, $t2
+add $9, $10, $11
 addi $t1, $t0, 4

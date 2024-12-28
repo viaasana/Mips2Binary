@@ -59,13 +59,15 @@ void R_Type::split(string s, string output[]) {
 	i++;
 	if (s[i] == 32)
 		i++;
-	
+	isShamt = 1;
 	temp = "";
 	for (; i < s.length(); i++)
 		if (s[i] == 32 || s[i] == ',')
 			break;
 		else if (s[i] != '$')
 			temp += s[i];
+		else if (s[i] == '$')
+			isShamt = 0;
 	output[3] = temp;
 }
 
@@ -90,7 +92,7 @@ void R_Type::input(string in) {
 		return;
 	}
 	rd = Register(ingredient[1]);
-	if (isShamt(ingredient[3])) {
+	if (isShamt) {
 		rt = Register(ingredient[2]);
 		shamt = ingredient[3];
 	}
