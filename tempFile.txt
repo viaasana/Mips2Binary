@@ -1,0 +1,24 @@
+add $t0, $zero, $zero 
+addi $t1, $zero, 5 
+addu $t2, $t1, $t1 
+and $t3, $t2, $t1 
+lui $t4, 0x1001 
+jal save 
+lw $t5, 0($t4) 
+sw $t5, 4($t4) 
+beq $t1, $t2, end 
+beq $t1, $zero, main 
+lbu $t6, 7($t4) 
+lhu $t7, 8($t4) 
+addi $t8, $t7, -1 
+addiu $t9, $t8, 1 
+andi $t0, $t9, 0x7f 
+j finish 
+add $s0, $t0, $zero 
+add $s1, $s0, $zero 
+sw $s1, 0($t4) 
+jr $ra 
+add $ra, $zero, $zero 
+and $s2, $s1, $zero 
+add $s3, $s2, $s1 
+jr $ra 
