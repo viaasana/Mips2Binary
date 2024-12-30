@@ -11,7 +11,7 @@ using namespace std;
 
 
 int main() {
-	string fileName = "test.txt";
+	string fileName = "testcase1.mips";
 	string tempPath = "tempFile.txt";
 	string outPath = "out.txt";
 	vector<Lable> lables;
